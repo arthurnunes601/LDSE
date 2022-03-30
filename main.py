@@ -22,11 +22,15 @@ print("############### L D S E #############")
 lista.imprimir()
 
 print("#######################################")
+print(" # Inserindo o elemento '33' após os elementos '7'...", lista.inserirApos('7', '33'))
+lista.imprimir()
+
+print("#######################################")
 print(" # Removendo todos os elementos ... 7", lista.removerTodas('7'))
 lista.imprimir()
 
 print("#######################################")
-print(" # Inserindo '77' na posição 3... ", lista.inserirPosicao('77', 1))
+print(" # Inserindo '9' na posição 3... ", lista.inserirPosicao('9', 3))
 lista.imprimir()
 
 print("#####################################")
@@ -44,7 +48,6 @@ print("#######################################")
 print(" # Removendo o primeiro elemento...", lista.removerInicio())
 lista.imprimir()
 
-
 print("#######################################")
 print(" # Removendo o último elemento...", lista.removerFim())
 lista.imprimir()
@@ -53,7 +56,6 @@ print("#######################################")
 print(" # Removendo o elemento 4... ", lista.removerElemento('4'))
 lista.imprimir()
 
-
 print("#######################################")
-print("Somando todos os elementos... ", lista.somarElementos())
+print(" # Somando todos os elementos... ", lista.somarElementos())
 lista.imprimir()
