@@ -10,7 +10,7 @@ lista.inserirInicio('7')
 lista.inserirInicio('6')
 lista.inserirInicio('5')
 lista.inserirInicio('4')
-#lista.inserirInicio('7')#
+lista.inserirInicio('7')
 lista.inserirInicio('3')
 lista.inserirInicio('2')
 lista.inserirInicio('1')
@@ -22,7 +22,11 @@ print("############### L D S E #############")
 lista.imprimir()
 
 print("#######################################")
-print(" # Removendo todos os elementos ... ", lista.removerTodas('7'))
+print(" # Removendo todos os elementos ... 7", lista.removerTodas('7'))
+lista.imprimir()
+
+print("#######################################")
+print(" # Inserindo '77' na posição 3... ", lista.inserirPosicao('77', 6))
 lista.imprimir()
 
 print("#####################################")
