@@ -26,7 +26,7 @@ print(" # Removendo todos os elementos ... 7", lista.removerTodas('7'))
 lista.imprimir()
 
 print("#######################################")
-print(" # Inserindo '77' na posição 3... ", lista.inserirPosicao('77', 6))
+print(" # Inserindo '77' na posição 3... ", lista.inserirPosicao('77', 1))
 lista.imprimir()
 
 print("#####################################")
@@ -54,7 +54,6 @@ print(" # Removendo o elemento 4... ", lista.removerElemento('4'))
 lista.imprimir()
 
 
-
-'''print("#######################################")
+print("#######################################")
 print("Somando todos os elementos... ", lista.somarElementos())
-lista.imprimir()'''
+lista.imprimir()
