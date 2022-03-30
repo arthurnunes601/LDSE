@@ -87,26 +87,44 @@ class Ldse:
         if self.quant == 1:
             if self.prim.info == valor:
                 self.prim = self.ult = None
-                self.quant -= 1
+            self.quant -= 1
         else:
-            aux = ant = self.prim
             if self.prim.info == valor:
                 self.prim = self.prim.prox
                 self.quant -= 1
+            aux = ant = self.prim
             while aux.prox != None:
                 ant = aux
                 aux = aux.prox
-                if aux.info == valor:
+                if aux.info == valor and aux.prox != None:
                     ant.prox = aux.prox
                     if aux == self.prim:
                         self.prim = ant.prox
                     if aux == self.ult:
                         self.ult = ant
                     self.quant -= 1
+            aux = ant = self.prim
             if self.ult.info == valor:
-                aux = self.ult
-                while aux.prox != self.ult:
+                while aux.prox != None:
+                    ant = aux
                     aux = aux.prox
+                aux = ant
                 aux.prox = None
                 self.ult = aux
                 self.quant -= 1
+
+    def inserirPosicao(self, valor, posicao):
+        ant =  aux = self.prim
+        cont = 1
+        while cont != posicao:
+            cont += 1
+            ant = aux
+            aux = aux.prox
+        if cont == 1:
+            self.prim.prox = self.prim
+            self.prim = No(valor, self.prim.prox)
+        if cont == self.quant:
+            self.ult.prox = self.ult = No(valor, None)
+        else:
+            ant.prox = No(valor, aux)
+        self.quant += 1
