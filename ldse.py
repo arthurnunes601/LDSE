@@ -114,30 +114,41 @@ class Ldse:
                 self.quant -= 1
 
     def inserirPosicao(self, valor, posicao):
-        ant =  aux = self.prim
+        ant = aux = self.prim
         cont = 1
-        if posicao > self.quant:
+        while cont != posicao:
+            cont += 1
+            ant = aux
+            aux = aux.prox
+        if cont == 1:
+            self.prim.prox = aux.prox
+            self.prim = No(valor, self.prim.prox)
+        if cont == self.quant:
             self.ult.prox = self.ult = No(valor, None)
         else:
-            while cont != posicao:
-                cont += 1
-                ant = aux
-                aux = aux.prox
-            if cont == 1:
-                self.prim.prox = aux.prox
-                self.prim = No(valor, self.prim.prox)
-            if cont == self.quant:
-                self.ult.prox = self.ult = No(valor, None)
-            else:
-                ant.prox = No(valor, aux)
-            self.quant += 1
+            ant.prox = No(valor, aux)
+        self.quant += 1
 
     def somarElementos(self):
         aux = ant = self.prim
-        soma = 0
+        soma = ""
         while aux.prox != None:
             soma += aux.info
             ant = aux
             aux = aux.prox
         soma += self.ult.info
         self.ult.prox = self.ult = No(soma, None)
+
+    def inserirApos(self, valor1, valor2):
+        aux = ant = self.prim
+        while aux.prox != None:
+            while aux.info != valor1:
+                ant = aux
+                aux = aux.prox
+            ant = aux
+            aux = aux.prox
+            ant.prox = No(valor2, aux)
+            self.quant += 1
+        if self.ult.info == valor1:
+            self.ult.prox = self.ult = No(valor2, None)
+            self.quant += 1
